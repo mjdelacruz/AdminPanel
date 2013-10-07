@@ -1,0 +1,25 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.dbm_icon{
+	font-size:70px !important;
+	color: #AAAAAA;
+	vertical-align:baseline !important;
+
+}
+
+.sub_btn{
+	background:#C00;
+	padding:2px 30px;
+	font-size:12px;
+	color:#FFF;
+	border-radius:6px;
+	inline-box-align:2px !important;
+
+}
+
+.sub_text{
+	font-size:14px;
+	
+
+}
