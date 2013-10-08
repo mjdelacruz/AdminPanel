@@ -15,4 +15,6 @@ $(function(){
             $(this).append("<i style='margin-left:3px;' class='icon-chevron-sign-down'></i>");
         }
     });
+    
+    $(".sortable .datatable thead th[default]").click();
 });
