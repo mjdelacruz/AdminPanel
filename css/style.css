@@ -2272,6 +2272,7 @@ footer p {
 .circleStatsItem.green, .circleStatsItem.green i {color:#b9e672; }
 .circleStatsItem.yellow, .circleStatsItem.yellow i {color:#e7e572; }
 .circleStatsItem.pink, .circleStatsItem.pink i {color:#e42b75; }
+.circleStatsItem.red, .circleStatsItem.red i {color:#b90000; }
 		
 .circleStatsItem input {
 	cursor: default;

@@ -651,6 +651,19 @@ function circle_progess() {
         'tickColorizeValues': true,
 		'skin':'tron'
     })
+
+	$(".redCircle").knob({
+        'min':0,
+        'max':100,
+        'readOnly': true,
+        'width': 120,
+        'height': 120,
+        'fgColor': '#b90000',
+        'dynamicDraw': true,
+        'thickness': 0.2,
+        'tickColorizeValues': true,
+		'skin':'tron'
+    })
 	
 	
 }                
