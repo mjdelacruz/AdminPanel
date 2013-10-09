@@ -813,6 +813,12 @@
                     $("#txttitle").focus();
                 });                
                 
+                $(".datatable tbody tr, .datatable tbody tr td").hover(function(){
+                    $(this).addClass("row_hlight");
+                }, function(){
+                    $(this).removeClass("row_hlight");
+                })
+                
                 $(".btn-hide").click(function(){
                     $('#data_entry_pages').hide(500);
                 });
