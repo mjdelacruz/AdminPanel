@@ -423,34 +423,33 @@
                                     <a href="#" class="btn-close"><i class="icon-remove"></i></a>
                                 </div>
                             </div>
-                            <div class="box-content">
+                            
+                            
+                            <div class="box-content clearfix">
                                 <form class="form-horizontal">
-                                    <fieldset>
-                                        <div class="control-group">
-                                            <label class="control-label" for="focusedInput">Option</label>
-                                            <div class="controls">
-                                                <input id="txt_opt" class="input-xlarge" type="text">
-                                            </div>
+                                    <div class="div_grp" style="width: 300px;">
+                                        <label class="control-label">Option</label>
+                                        <div class="controls">
+                                            <input id="txt_opt" class="input-large" type="text">
                                         </div>
-                                        <div class="control-group">
-                                            <label class="control-label" for="textarea2">Value</label>
-                                            <div class="controls">
-                                                <textarea id="txt_value" rows="3" style="width: 270px;"></textarea>
-                                            </div>
+                                    </div>
+                                    <div class="div_grp" style="width: 361px;">
+                                        <label class="control-label" for="textarea2">Value</label>
+                                        <div class="controls">
+                                            <textarea id="txt_value" rows="1" style="width: 270px;"></textarea>
                                         </div>
-                                        <div class="control-group">
-                                            <label class="control-label">Expire</label>
-                                            <div class="controls">
-                                                <input id="txt_expire" style="width: 100px;" type="text">
-                                            </div>
+                                    </div>
+                                    <div class="div_grp" style="width: 186px;;">
+                                        <label class="control-label">Expire</label>
+                                        <div class="controls">
+                                            <input id="txt_expire" style="width: 40px;" type="text">
                                         </div>
-                                        <div class="form-actions">
-                                            <button type="button" id="btn_save" class="btn btn-primary">Add</button>
-                                            <button class="btn">Clear</button>
-                                        </div>
-                                    </fieldset>
-                                </form>
-
+                                    </div>  
+                                    <div class="div_grp" style="width: 123px; float: right; text-align: right;">
+                                        <button type="button" id="btn_save" class="btn btn-primary">Add</button>
+                                        <button class="btn">Clear</button>
+                                    </div>
+                                </form>   
                             </div>
                         </div><!--/span-->
 
@@ -638,9 +637,9 @@
 
             $(document).ready(function(){
 
-                setTimeout("message_welcome1()",5000);
+                /*setTimeout("message_welcome1()",5000);
                 setTimeout("message_welcome2()",10000);	
-                setTimeout("message_welcome3()",15000);
+                setTimeout("message_welcome3()",15000);*/
 
             });			
         </script>
@@ -666,6 +665,9 @@
             if(verify_opt_entry() == false) { return false; }
             
             $('#prod_opt_list tbody:first').append('<tr><td>'+jQuery.trim($("#txt_opt").val())+'</td><td>'+jQuery.trim($("#txt_value").val())+'</td><td>'+jQuery.trim($("#txt_expire").val())+'</td><td width="10%" class="center"><a class="btn btn-warning" href="#"><i class="icon-edit icon-white"></i></a> <a class="btn btn-danger" href="#"><i class="icon-trash icon-white"></i></a></td></tr>');
+            
+            ksdialog("Data has been successfully saved.");
+            reset_form();
         });
     });
     
@@ -682,6 +684,17 @@
         }
         
         return true;
+    }
+    
+    function reset_form(){
+        //$("#prod_opt_list").find("input[type=text], textarea").val("");
+        //alert(1);
+        //$('#prod_opt_entry form').reset();
+        /*.val('')
+        .removeAttr('checked')
+        .removeAttr('selected');*/
+        
+        $('form')[0].reset();
     }
 
     function ksdialog(caption, focusDOM){
