@@ -4,7 +4,7 @@
 	
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>Compare Hero</title>
+	<title>Product Category Settings</title>
 	<meta name="description" content="Perfectum Dashboard Bootstrap Admin Template.">
 	<meta name="author" content="Łukasz Holeczek">
 	<!-- end: Meta -->
@@ -325,9 +325,15 @@
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
 						<li><a href="home.html"><i class="icon-home icon-white"></i><span class="hidden-tablet"> Home</span></a></li>
-                        <li><a href="verticals.html"><i class="icon-ellipsis-vertical icon-white"></i><span class="hidden-tablet"> Verticals</span></a>
+                        <li><a class="dropmenu" href="verticals.html"><i class="icon-ellipsis-vertical icon-white"></i><span class="hidden-tablet"> Verticals</span></a>
+                        	<ul>
+                            	<li><a class="submenu" href="companies.html"><span class="hidden-tablet">Companies</span></a></li>
+                            	<li><a class="submenu" href="product-categories.html"><span class="hidden-tablet">Product Categories</span></a></li>
+                                <li><a class="submenu" href="product-list.html"><span class="hidden-tablet">Product Lists</span></a></li>
+							</ul>	
+
 							
-						</li>
+					  </li>
 						<li><a href="partners.html"><i class="icon-group icon-white"></i><span class="hidden-tablet"> Partners</span></a></li>
 						<li><a href="users.html"><i class="icon-user icon-white"></i><span class="hidden-tablet"> Users</span></a></li>
 						<li><a href="leads.html"><i class="icon-list-alt icon-white"></i><span class="hidden-tablet"> Leads</span></a></li>
@@ -346,17 +352,7 @@
                                 <li><a class="submenu" href="ui.html"><span class="hidden-tablet"> UI Features</span></a></li>
 							</ul>	
 						</li>
-                        <li><a class="dropmenu" href="verticals.html"><i class="icon-tasks icon-white"></i><span class="hidden-tablet">Product Management</span></a>
-							<ul>
-                            	<li><a class="submenu" href="product-lists.html"><span class="hidden-tablet">Add Product</span></a></li>
-                            	<li><a class="submenu" href="allcampaigns.html"><span class="hidden-tablet">All Campaigns</span></a></li>
-                                <li><a class="submenu" href="singlecampaign.html"><span class="hidden-tablet">Create Campaigns</span></a></li>
-								<li><a class="submenu" href="create-campaigns.html"><span class="hidden-tablet">A/B Split Campaigns</span></a></li>
-                                <li><a class="submenu" href="reports.html"><span class="hidden-tablet">Reports</span></a></li>
-                                <li><a class="submenu" href="database-management.html"><span class="hidden-tablet">Database Management</span></a></li>
-                                
-							</ul>	
-						</li>
+                        <li><a class="dropmenu" href="verticals.html"><i class="icon-tasks icon-white"></i><span class="hidden-tablet">Product Management</span></a></li>
                         <li><a class="dropmenu" href="verticals.html"><i class="icon-signal icon-white"></i><span class="hidden-tablet">Statistics</span></a>
 							<ul>
                             	<li><a class="submenu" href="#"><span class="hidden-tablet">Product Statistics</span></a></li>
@@ -380,99 +376,179 @@
 			
 			<div id="content" class="span10">
 			<!-- start: Content -->
-			
-			<div>
-				<hr>
+            	<hr>
+            
 				<ul class="breadcrumb">
 					<li>
-						<a href="#">Home</a> <span class="divider">/</span>
+						<a href="home.html">Home</a> <span class="divider">/</span>
 					</li>
 					<li>
-						<a href="#">Database Management</a>
+						<a href="#">Verticals</a> <span class="divider">/</span>
+					</li>
+                    <li>
+						<a href="product-categories.html">Product Categories</a>
 					</li>
 				</ul>
+            
 				<hr>
                 
-               <form enctype="multipart/form-data" method="post" action="upload_file.php">
-                <label class="sub_text" for="file">Filename:</label>
-                <div class="uploader" id="uniform-file"><input type="file" id="file" name="file"><span class="filename" style="-moz-user-select: none;">Your Files</span><span class="action" style="-moz-user-select: none;">Choose File</span></div><br><br>
-                <input type="submit" class="sub_btn" value="Submit" name="SUBMIT">
-                </form>
+                <div class="row-fluid">
+
+                        <div class="circleStats">
+
+                            <div class="span3 offset2" onTablet="span4" onDesktop="span2">
+                                <div class="circleStatsItem blue">
+                                    <i class="icon-globe"></i>
+                                    <span class="plus">+</span>
+                                    <span class="percent">%</span>
+                                    <input type="text" value="12" class="blueCircle" />
+                                </div>
+                                <div class="box-small-title">Over All Categories Score</div>
+                            </div>
+
+                            <div class="noMargin span2 offset1" onTablet="span4" onDesktop="span2">
+
+                                <div class="circleStatsItem yellow">
+                                    <i class="icon-th-large"></i>
+                                    <span class="plus">+</span>
+                                    <span class="percent">%</span>
+                                    <input type="text" value="30" class="yellowCircle" />
+                                </div>
+                                <div class="box-small-title">Top Category Score</div>
+                            </div>
+
+
+                            <div class="span2 offset1" onTablet="span4" onDesktop="span2">
+                                <div class="circleStatsItem lightorange">
+                                    <i class="icon-shopping-cart"></i>
+                                    <span class="plus" pull>+</span>
+                                    <span class="percent">%</span>
+                                    <input type="text" value="42" class="lightOrangeCircle" />
+                                </div>
+                                <div class="box-small-title">Revenue</div>
+                            </div>
+
+           
+                        </div>
+                    </div>
+                    
+               <hr>     
                 
-                <hr>
+                <div class="row-fluid sortable">	
+				<div class="box span12">
+					<div class="box-header">
+						<h2><i class="icon-list"></i><span class="break"></span>Category Settings</h2>
+					</div>
+					<div class="box-content">
+						
+						<a class="quick-button span4" href="add-category.html">
+							<i class="icon-folder-open"></i>
+							<p>ADD CATEGORY</p>
+						</a>
+						<a class="quick-button span4" href="edit-category.html">
+							<i class="icon-pencil"></i>
+							<p>EDIT CATEGORY INFORMATION</p>	
+						</a>
+						<a class="quick-button span4" href="view-category-lists.html">
+							<i class="icon-eye-open"></i>
+							<p>VIEW ALL CATEGORY LISTS</p>
+						</a>
+					
+						
+						<div class="clearfix"></div>
+					</div>	
+				</div><!--/span-->
+				
 			</div>
-			
-			<div class="row-fluid">
-				
-				
-				<div class="circleStats" align="center">
-                    
-				
-					
-                    <a href="#" myvalue="Blah Blah Blah"><div class="noMargin span2 offset1" onTablet="span4" onDesktop="span2" >
-                        	<i class="icon-credit-card dbm_icon"></i>  
-					  		<div class="box-small-title">Credit Cards</div>
-					</div></a>
-					
-                    
-                    <a href="#" myvalue="Blah Blah Blah"><div class="noMargin span2" onTablet="span4" onDesktop="span2" >
-                        	<i class="icon-money dbm_icon"></i>  
-					  		<div class="box-small-title">Savings Account</div>
-					</div></a>
-					
-                    
-                    <a href="#" myvalue="Blah Blah Blah"><div class="noMargin span2" onTablet="span4" onDesktop="span2" >
-                        	<i class="icon-bar-chart dbm_icon"></i>  
-					  		<div class="box-small-title">Fix Term Deposits</div>
-					</div></a>
-					
-                    
-                    <a href="#" myvalue="Blah Blah Blah"><div class="noMargin span2" onTablet="span4" onDesktop="span2">
-                        	<i class="icon-share-alt dbm_icon"></i>  
-					  		<div class="box-small-title">Debit Cards</div>
-					</div></a>
-                    
-                    
-                    <a href="#" myvalue="Blah Blah Blah"><div class="noMargin span2" onTablet="span4" onDesktop="span2">
-                        	<i class="icon-signal dbm_icon"></i>  
-					  		<div class="box-small-title">Broadband</div>
-					</div></a>
-					
-                    
-                    <a href="#" myvalue="Blah Blah Blah">
-                    	<div class="noMargin span2" onTablet="span4" onDesktop="span2">
-                        	<i class="icon-mobile-phone dbm_icon"></i>
-					  			<div class="box-small-title hidden-tablet">Mobile</div> 
-                            	
+                
+                
+                <div class="row-fluid sortable">	
+				<div class="box span12">
+					<div class="box-header">
+						<h2><i class="icon-list"></i><span class="break"></span>Latest Added Catergories</h2>
+						<div class="box-icon">
+							<a href="#" class="btn-setting"><i class="icon-wrench"></i></a>
+							<a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
+							<a href="#" class="btn-close"><i class="icon-remove"></i></a>
 						</div>
-                 				
-					
-					
-                   
-                    
-              </div>
-              
-              
-              
-</div>
-
-
-
+					</div>
+					<div class="box-content">
+						<table class="table table-bordered table-striped table-condensed">
+							  <thead>
+								  <tr>
+                                  	  <th>Logo</th>
+									  <th>Company Name</th>
+									  <th>Date Created</th>
+									  <th>Author</th>
+									  <th>Status</th>                                          
+								  </tr>
+							  </thead>   
+							  <tbody>
+								<tr>
+                                	<td><img src="img/logo.png" width="30"></td>
+									<td>Company Name 1</td>
+									<td class="center">2012/01/01</td>
+									<td class="center">Juan Dela Cruz</td>
+									<td class="center">
+										<span class="label label-success">Active</span>
+									</td>                                       
+								</tr>
+								<tr>
+                                	<td><img src="img/logo22.png" width="32"></td>
+									<td>Company Name 2</td>
+									<td class="center">2012/02/01</td>
+									<td class="center">Pedro Sotto</td>
+									<td class="center">
+										<span class="label label-important">Banned</span>
+									</td>                                       
+								</tr>
+								<tr>
+                                	<td><img src="img/logo.png" width="30"></td>
+									<td>Company Name 3</td>
+									<td class="center">2012/02/01</td>
+									<td class="center">Jose De Vera</td>
+									<td class="center">
+										<span class="label">Inactive</span>
+									</td>                                        
+								</tr>
+								<tr>
+                                	<td><img src="img/logo22.png" width="30"></td>
+									<td>Company Name 4</td>
+									<td class="center">2012/03/01</td>
+									<td class="center">Bong Revilla</td>
+									<td class="center">
+										<span class="label label-warning">Pending</span>
+									</td>                                       
+								</tr>
+								<tr>
+                                	<td><img src="img/logo.png" width="30"></td>
+									<td>Company Name 5</td>
+									<td class="center">2012/01/21</td>
+									<td class="center">Janet Napoles</td>
+									<td class="center">
+										<span class="label label-success">Active</span>
+									</td>                                        
+								</tr>                                   
+							  </tbody>
+						 </table>  
+						 <div class="pagination pagination-centered">
+						  <ul>
+							<li><a href="#">Prev</a></li>
+							<li class="active">
+							  <a href="#">1</a>
+							</li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">Next</a></li>
+						  </ul>
+						</div>     
+					</div>
+				</div><!--/span-->
+			</div>
 
 				<!--/row-->
-    
-					<hr>
-                    <div class="brief" id="credbox">
-                    <h2>Credit Card</h2>
-   Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
-                    </div>
-                    	                          
-                    
-                    
-                     <!--Brief Discrp-->
-               		
-               
-               <!--End of Brief Discrp-->
+    			
 			<!-- end: Content -->
 </div><!--/#content.span10-->
 				</div><!--/fluid-row-->
@@ -553,67 +629,7 @@
 		<script src="js/jquery.sparkline.min.js"></script>
 
 		<script src="js/custom.js"></script>
-		<script type="text/javascript">
-	
-function message_welcome1(){
-		var unique_id = $.gritter.add({
-			// (string | mandatory) the heading of the notification
-			title: 'Welcome on Compare Hero Dashboard',
-			// (string | mandatory) the text inside the notification
-			text: 'This is a sample mock up',
-			// (string | optional) the image to display on the left
-			image: 'img/avatar.jpg',
-			// (bool | optional) if you want it to fade out on its own or just sit there
-			sticky: false,
-			// (int | optional) the time you want it to be alive for before fading out
-			time: '',
-			// (string | optional) the class name you want to apply to that specific message
-			class_name: 'my-sticky-class'
-		});
-	}
-	
-	function message_welcome2(){
-		var unique_id = $.gritter.add({
-			// (string | mandatory) the heading of the notification
-			title: 'Hi User',
-			// (string | mandatory) the text inside the notification
-			text: 'Compare Hero dashboard works on all devices, computers, tablets and smartphones. It has lots of great features. Try It!',
-			// (string | optional) the image to display on the left
-			image: 'img/avatar.jpg',
-			// (bool | optional) if you want it to fade out on its own or just sit there
-			sticky: false,
-			// (int | optional) the time you want it to be alive for before fading out
-			time: '',
-			// (string | optional) the class name you want to apply to that specific message
-			class_name: 'my-sticky-class'
-		});
-	}
-	
-	function message_welcome3(){
-		var unique_id = $.gritter.add({
-			// (string | mandatory) the heading of the notification
-			title: 'Test1234!',
-			// (string | mandatory) the text inside the notification
-			text: 'Test1234.',
-			// (string | optional) the image to display on the left
-			image: 'img/avatar.jpg',
-			// (bool | optional) if you want it to fade out on its own or just sit there
-			sticky: false,
-			// (int | optional) the time you want it to be alive for before fading out
-			time: '',
-			// (string | optional) the class name you want to apply to that specific message
-			class_name: 'gritter-light'
-		});
-	}
-	
-	$(document).ready(function(){
 		
-		setTimeout("message_welcome1()",5000);
-		setTimeout("message_welcome2()",10000);	
-		setTimeout("message_welcome3()",15000);
-		
-	});			
-	</script>
 		<!-- end: JavaScript-->
 	
 </body>

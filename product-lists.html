@@ -4,7 +4,7 @@
 	
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>All Campaigns</title>
+	<title>Product Lists</title>
 	<meta name="description" content="Perfectum Dashboard Bootstrap Admin Template.">
 	<meta name="author" content="�?ukasz Holeczek">
 	<!-- end: Meta -->
@@ -43,7 +43,53 @@
 	<link rel="shortcut icon" href="img/favicon.ico">
 	<!-- end: Favicon -->
 	
-		
+	        <!-- TinyMCE -->
+        <script type="text/javascript" src="tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript">
+            tinyMCE.init({
+                // General options
+                mode : "textareas",
+                theme : "advanced",
+                plugins : "autolink,lists,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,wordcount,advlist,autosave,visualblocks",
+
+                // Theme options
+                theme_advanced_buttons1 : "save,newdocument,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,styleselect,formatselect,fontselect,fontsizeselect",
+                theme_advanced_buttons2 : "cut,copy,paste,pastetext,pasteword,|,search,replace,|,bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,image,cleanup,help,code,|,insertdate,inserttime,preview,|,forecolor,backcolor",
+                theme_advanced_buttons3 : "tablecontrols,|,hr,removeformat,visualaid,|,sub,sup,|,charmap,emotions,iespell,media,advhr,|,print,|,ltr,rtl,|,fullscreen",
+                theme_advanced_buttons4 : "insertlayer,moveforward,movebackward,absolute,|,styleprops,|,cite,abbr,acronym,del,ins,attribs,|,visualchars,nonbreaking,template,pagebreak,restoredraft,visualblocks",
+                theme_advanced_toolbar_location : "top",
+                theme_advanced_toolbar_align : "left",
+                theme_advanced_statusbar_location : "bottom",
+                theme_advanced_resizing : true,
+
+                // Example content CSS (should be your site CSS)
+                content_css : "css/content.css",
+
+                // Drop lists for link/image/media/template dialogs
+                template_external_list_url : "lists/template_list.js",
+                external_link_list_url : "lists/link_list.js",
+                external_image_list_url : "lists/image_list.js",
+                media_external_list_url : "lists/media_list.js",
+
+                // Style formats
+                style_formats : [
+                {title : 'Bold text', inline : 'b'},
+                {title : 'Red text', inline : 'span', styles : {color : '#ff0000'}},
+                {title : 'Red header', block : 'h1', styles : {color : '#ff0000'}},
+                {title : 'Example 1', inline : 'span', classes : 'example1'},
+                {title : 'Example 2', inline : 'span', classes : 'example2'},
+                {title : 'Table styles'},
+                {title : 'Table row 1', selector : 'tr', classes : 'tablerow1'}
+                ],
+
+                // Replace values for the template plugin
+                template_replace_values : {
+                    username : "Some User",
+                    staffid : "991234"
+                }
+            });
+        </script>
+<!-- /TinyMCE -->	
 		
 		
 </head>
@@ -368,7 +414,8 @@
                        
 
 					</ul></div><!--/.well -->
-			</div><!--/span-->
+			</div>
+            <!--/span-->
 			<!-- end: Main Menu -->
 			
 			<noscript>
@@ -391,7 +438,7 @@
 						<a href="#">Product Management</a><span class="divider">/</span>
 					</li>
                     <li>
-						<a href="#">All Campaigns</a>
+						<a href="#">Product Lists</a>
 					</li>
 				</ul>
 				<hr>
@@ -400,11 +447,120 @@
 			</div>
 			
 			<div class="row-fluid">
+            
+		     <div class="box span12" onTablet="span12" onDesktop="span12">
+					<div class="box-header">
+						<h2><i class="icon-signal"></i><span class="break"></span>Product Statistics</h2>
+						<div class="box-icon">
+							<a href="#" class="btn-setting"><i class="icon-wrench"></i></a>
+							<a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
+							<a href="#" class="btn-close"><i class="icon-remove"></i></a>
+						</div>
+					</div>
+					<div class="box-content">
+						<div id="stats-chart"  class="center" style="height:300px" ></div>
+					</div>
+				</div>            
 	              
+                  
+              <div id="data_entry_pages" class="row-fluid">
+                        <div class="box span12">
+                            <div class="box-header" data-original-title>
+                                <h2><i class="icon-edit"></i><span class="break"></span>Add Page</h2>
+                                <div class="box-icon">
+                                    <a href="#" class="btn-setting"><i class="icon-wrench"></i></a>
+                                    <a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
+                                    <a href="#" class="btn-hide"><i class="icon-remove"></i></a>
+                                </div>
+                            </div>
+                            <div class="box-content">
+                                <form class="form-horizontal">
+                                    <fieldset>
+                                        <div class="control-group">
+                                            <label class="control-label" for="typeahead">Name </label>
+                                            <div class="controls">
+                                                <input type="text" class="span6 typeahead" id="txttitle"  data-provide="typeahead" data-items="4" 
+                                                    data-source='["Alabama","Alaska","Arizona","Arkansas"]'>
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="typeahead">Description </label>
+                                            <div class="controls">
+                                                <input type="text" class="span6 typeahead" id="typeahead"  data-provide="typeahead" data-items="4" 
+                                                    data-source='["Alabama","Alaska","Arizona","Arkansas"]'>
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="typeahead">URL </label>
+                                            <div class="controls">
+                                                <input type="text" class="span6 typeahead" id="typeahead"  data-provide="typeahead" data-items="4" 
+                                                    data-source='["Alabama","Alaska","Arizona","Arkansas"]'>
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="selectError">Meta</label>
+                                            <div class="controls">
+                                                <input type="text" placeholder="add new" class="span2 typeahead" id="typeahead"  data-provide="typeahead" data-items="4" >
+                                                <br /><br />
+                                                <select id="selectError" data-rel="chosen">
+                                                    <option>Select for existing Meta</option>
+                                                    <option>Compare</option>
+                                                    <option>Hero</option>
+                                                    <option>Lowest</option>
+                                                    <option>Credit</option>
+                                                    <option>Card</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="typeahead">Author </label>
+                                            <div class="controls">
+                                                <input type="text" class="span6 typeahead" id="typeahead"  data-provide="typeahead" data-items="4" 
+                                                    data-source='["Alabama","Alaska","Arizona","Arkansas"]'>
+                                            </div>
+                                        </div><div class="control-group">
+                                            <label class="control-label" for="selectError3">Status</label>
+                                            <div class="controls">
+                                                <select id="selectError3">
+                                                    <option>Option 1</option>
+                                                    <option>Option 2</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="control-group">
+                                          <label class="control-label" for="fileInput">File input</label>
+                                          <div class="controls">
+                                            <input class="input-file uniform_on" id="fileInput" type="file">
+                                          </div>
+                                        </div>
+                                        
+                                        <div class="control-group hidden-phone">
+                                            <label class="control-label" for="textarea2">Textarea WYSIWYG</label>
+                                            <div class="controls">
+                                                <textarea id="elm1" name="elm1" rows="20" cols="80" style="width: 70%">
+                                                    
+                                                </textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-actions">
+                                            <button type="submit" class="btn btn-primary">Save changes</button>
+                                            <button type="reset" class="btn">Cancel</button>
+                                        </div>
+                                    </fieldset>
+                                </form>   
+
+                            </div>
+                        </div><!--/span-->
+
+                    </div>    
+                  
+                  
+                  
               <div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header" data-original-title>
-						<h2><i class="icon-book"></i><span class="break"></span>Campaign Lists</h2>
+						<h2><i class="icon-book"></i><span class="break"></span>Product Lists</h2>
 						<div class="box-icon">
 							<a href="#" class="btn-setting"><i class="icon-wrench"></i></a>
 							<a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
@@ -416,19 +572,20 @@
 						  <thead>
 							  <tr>
                               	  <th default="1">Date</th>
-								  <th>Campaign Name</th>
-								  <th>Total Open</th>
-								  <th>Uniq Clicks</th>
+								  <th>Product Name</th>
+								  <th>Quantity</th>
+								  <th>SKU No.</th>
                                   <th>Status</th>
                                   <th>Edit</th>
+                                  <th>Last Update</th>
                               </tr>
 						  </thead>   
 						  <tbody>
 							<tr>
                             	<td> 01/01/2013</td>
-								<td>Campaign1</td>
-								<td class="center">Test1234</td>
-								<td class="center">Test1234</td>
+								<td>Product1</td>
+								<td class="center">12</td>
+								<td class="center">1234567890</td>
 								<td class="center">
 									<span class="label label-success">Active</span>
 								</td>
@@ -443,12 +600,13 @@
 										<i class="icon-trash icon-white"></i> 
 									</a>
 								</td>
+                                <td>01/01/2013</td>
 							</tr>
 							<tr>
                             	<td> 01/07/2013</td>
-								<td>Campaign2</td>
-								<td class="center">Test1234</td>
-								<td class="center">Test1234</td>
+								<td>Product2</td>
+								<td class="center">10</td>
+								<td class="center">1234567890</td>
 								<td class="center">
 									<span class="label label-success">Active</span>
 								</td>
@@ -463,11 +621,12 @@
 										<i class="icon-trash icon-white"></i> 
 									</a>
 								</td>
+                                <td>09/21/2013</td>
 							<tr>
                             	<td>01/14/2013</td>
-								<td>Campaign3</td>
-								<td class="center">Test1234</td>
-								<td class="center">Test1234</td>
+								<td>Product3</td>
+								<td class="center">2</td>
+								<td class="center">1234567890</td>
 								<td class="center">
 									<span class="label label-warning">Pending</span>
 								</td>
@@ -482,12 +641,13 @@
 										<i class="icon-trash icon-white"></i> 
 									</a>
 								</td>
+                                <td> 01/01/2013</td>
 							</tr>
 							<tr>
                             	<td>01/21/2013</td>
-								<td>Campaign4</td>
-								<td class="center">Test1234</td>
-								<td class="center">Test1234</td>
+								<td>Product4</td>
+								<td class="center">10</td>
+								<td class="center">1234567890</td>
 								<td class="center">
 									<span class="label label-success">Active</span>
 								</td>
@@ -502,12 +662,13 @@
 										<i class="icon-trash icon-white"></i> 
 									</a>
 								</td>
+                                <td>01/01/2013</td>
 							</tr>
 							<tr>
                             	<td>01/28/2013</td>
-								<td>Campaign5</td>
-								<td class="center">Test1234</td>
-								<td class="center">Test1234</td>
+								<td>Product5</td>
+								<td class="center">123</td>
+								<td class="center">1234567890</td>
 								<td class="center">
 									<span class="label label-success">Active</span>
 								</td>
@@ -522,12 +683,13 @@
 										<i class="icon-trash icon-white"></i> 
 									</a>
 								</td>
+                                <td>03/19/2013</td>
 							</tr>
 							<tr>
                             	<td>02/05/2013</td>
-								<td>Campaign6</td>
-								<td class="center">Test1234</td>
-								<td class="center">Test1234</td>
+								<td>Product6</td>
+								<td class="center">30</td>
+								<td class="center">1234567890</td>
 								<td class="center">
 									<span class="label label-important">Banned</span>
 								</td>
@@ -542,12 +704,13 @@
 										<i class="icon-trash icon-white"></i> 
 									</a>
 								</td>
+                                <td> 07/05/2013</td>
 							</tr>
 							<tr>
                             	<td>02/12/2013</td>
-								<td>Campaign7</td>
-								<td class="center">Test1234</td>
-								<td class="center">Test1234</td>
+								<td>Product7</td>
+								<td class="center">9</td>
+								<td class="center">1234567890</td>
 								<td class="center">
 									<span class="label label-important">Banned</span>
 								</td>
@@ -562,12 +725,13 @@
 										<i class="icon-trash icon-white"></i> 
 									</a>
 								</td>
+                                <td> 01/09/2013</td>
 							</tr>
 							<tr>
                             	<td>02/19/2013</td>
-								<td>Campaign8</td>
-								<td class="center">Test1234</td>
-								<td class="center">Test1234</td>
+								<td>Product8</td>
+								<td class="center">5</td>
+								<td class="center">1234567890</td>
 								<td class="center">
 									<span class="label">Inactive</span>
 								</td>
@@ -582,12 +746,13 @@
 										<i class="icon-trash icon-white"></i> 
 									</a>
 								</td>
+                                <td> 01/28/2013</td>
 							</tr>
 							<tr>
                             	<td>02/26/2013</td>
-								<td>Campaign9</td>
-								<td class="center">Test1234</td>
-								<td class="center">Test1234</td>
+								<td>Product9</td>
+								<td class="center">11</td>
+								<td class="center">1234567890</td>
 								<td class="center">
 									<span class="label">Inactive</span>
 								</td>
@@ -602,12 +767,13 @@
 										<i class="icon-trash icon-white"></i> 
 									</a>
 								</td>
+                                <td> 05/01/2013</td>
 							</tr>
 							<tr>
                             	<td>03/03/2013</td>
-								<td>Campaign10</td>
-								<td class="center">Test1234</td>
-								<td class="center">Test1234</td>
+								<td>Product10</td>
+								<td class="center">18</td>
+								<td class="center">1234567890</td>
 								<td class="center">
 									<span class="label label-warning">Pending</span>
 								</td>
@@ -622,12 +788,13 @@
 										<i class="icon-trash icon-white"></i> 
 									</a>
 								</td>
+                                <td> 01/17/2013</td>
 							</tr>
 							<tr>
                             	<td>03/10/2013</td>
-								<td>Campaign11</td>
-								<td class="center">Test1234</td>
-								<td class="center">Test1234</td>
+								<td>Product11</td>
+								<td class="center">24</td>
+								<td class="center">1234567890</td>
 								<td class="center">
 									<span class="label label-warning">Pending</span>
 								</td>
@@ -642,12 +809,13 @@
 										<i class="icon-trash icon-white"></i> 
 									</a>
 								</td>
+                                <td> 08/25/2013</td>
 							</tr>
 							<tr>
                             	<td>03/17/2013</td>
-								<td>Campaign12</td>
-								<td class="center">Test1234</td>
-								<td class="center">Test1234</td>
+								<td>Product12</td>
+								<td class="center">40</td>
+								<td class="center">1234567890</td>
 								<td class="center">
 									<span class="label label-warning">Pending</span>
 								</td>
@@ -662,12 +830,13 @@
 										<i class="icon-trash icon-white"></i> 
 									</a>
 								</td>
+                                <td> 04/04/2013</td>
 							</tr>
 							<tr>
                             	<td>01/01/2013</td>
-								<td>Campaign13</td>
-								<td class="center">Test1234</td>
-								<td class="center">Test1234</td>
+								<td>Product13</td>
+								<td class="center">7</td>
+								<td class="center">1234567890</td>
 								<td class="center">
 									<span class="label label-success">Active</span>
 								</td>
@@ -682,12 +851,13 @@
 										<i class="icon-trash icon-white"></i> 
 									</a>
 								</td>
+                                <td> 03/02/2013</td>
 							</tr>
 							<tr>
                             	<td>01/01/2013</td>
-								<td>Campaign14</td>
-								<td class="center">Test1234</td>
-								<td class="center">Test1234</td>
+								<td>Product14</td>
+								<td class="center">4</td>
+								<td class="center">1234567890</td>
 								<td class="center">
 									<span class="label label-important">Banned</span>
 								</td>
@@ -702,12 +872,13 @@
 										<i class="icon-trash icon-white"></i> 
 									</a>
 								</td>
+                                <td> 02/01/2013</td>
 							</tr>
 							<tr>
                             	<td>01/01/2013</td>
-								<td>Campaign15</td>
-								<td class="center">Test1234</td>
-								<td class="center">Test1234</td>
+								<td>Product15</td>
+								<td class="center">12</td>
+								<td class="center">1234567890</td>
 								<td class="center">
 									<span class="label">Inactive</span>
 								</td>
@@ -722,12 +893,13 @@
 										<i class="icon-trash icon-white"></i> 
 									</a>
 								</td>
+                                <td> 01/09/2013</td>
 							</tr>
 							<tr>
                             	<td>01/01/2013</td>
-								<td>Campaign16</td>
-								<td class="center">Test1234</td>
-								<td class="center">Test1234</td>
+								<td>Product16</td>
+								<td class="center">44</td>
+								<td class="center">1234567890</td>
 								<td class="center">
 									<span class="label">Inactive</span>
 								</td>
@@ -742,12 +914,13 @@
 										<i class="icon-trash icon-white"></i> 
 									</a>
 								</td>
+                                <td> 01/15/2013</td>
 							</tr>
 							<tr>
                             	<td>01/01/2013</td>
-								<td>Campaign17</td>
-								<td class="center">Test1234</td>
-								<td class="center">Test1234</td>
+								<td>Product17</td>
+								<td class="center">16</td>
+								<td class="center">1234567890</td>
 								<td class="center">
 									<span class="label label-warning">Pending</span>
 								</td>
@@ -762,12 +935,13 @@
 										<i class="icon-trash icon-white"></i> 
 									</a>
 								</td>
+                                <td> 03/01/2013</td>
 							</tr>
 							<tr>
                             	<td>01/01/2013</td>
-								<td>Campaign18</td>
-								<td class="center">Test1234</td>
-								<td class="center">Test1234</td>
+								<td>Product18</td>
+								<td class="center">20</td>
+								<td class="center">1234567890</td>
 								<td class="center">
 									<span class="label label-warning">Pending</span>
 								</td>
@@ -781,13 +955,33 @@
 									<a class="btn btn-danger" href="#">
 										<i class="icon-trash icon-white"></i> 
 									</a>
-								</td>
+								</td><td> 01/01/2013</td>
 							</tr>
 							<tr>
                             	<td>01/01/2013</td>
-								<td>Campaign19</td>
-								<td class="center">Test1234</td>
-								<td class="center">Test1234</td>
+								<td>Product19</td>
+								<td class="center">131</td>
+								<td class="center">1234567890</td>
+								<td class="center">
+									<span class="label label-success">Active</span>
+								</td>
+                                <td class="center">
+									<a class="btn btn-success" href="#">
+										<i class="icon-zoom-in icon-white"></i>  
+									</a>
+									<a class="btn btn-info" href="#">
+										<i class="icon-edit icon-white"></i>  
+									</a>
+									<a class="btn btn-danger" href="#">
+										<i class="icon-trash icon-white"></i> 
+									</a>
+								</td><td> 01/01/2013</td>
+							</tr>
+							<tr>
+                            	<td>01/01/2013</td>
+								<td>Product20</td>
+								<td class="center">4</td>
+								<td class="center">1234567890</td>
 								<td class="center">
 									<span class="label label-success">Active</span>
 								</td>
@@ -802,32 +996,13 @@
 										<i class="icon-trash icon-white"></i> 
 									</a>
 								</td>
+                                <td> 10/11/2013</td>
 							</tr>
 							<tr>
                             	<td>01/01/2013</td>
-								<td>Campaign20</td>
-								<td class="center">Test1234</td>
-								<td class="center">Test1234</td>
-								<td class="center">
-									<span class="label label-success">Active</span>
-								</td>
-                                <td class="center">
-									<a class="btn btn-success" href="#">
-										<i class="icon-zoom-in icon-white"></i>  
-									</a>
-									<a class="btn btn-info" href="#">
-										<i class="icon-edit icon-white"></i>  
-									</a>
-									<a class="btn btn-danger" href="#">
-										<i class="icon-trash icon-white"></i> 
-									</a>
-								</td>
-							</tr>
-							<tr>
-                            	<td>01/01/2013</td>
-								<td>Campaign21</td>
-								<td class="center">Test1234</td>
-								<td class="center">Test1234</td>
+								<td>Product21</td>
+								<td class="center">24</td>
+								<td class="center">1234567890</td>
 								<td class="center">
 									<span class="label label-important">Banned</span>
 								</td>
@@ -842,12 +1017,13 @@
 										<i class="icon-trash icon-white"></i> 
 									</a>
 								</td>
+                                <td> 01/08/2013</td>
 							</tr>
 							<tr>
                             	<td>01/01/2013</td>
-								<td>Campaign22</td>
-								<td class="center">Test1234</td>
-								<td class="center">Test1234</td>
+								<td>Product22</td>
+								<td class="center">2</td>
+								<td class="center">1234567890</td>
 								<td class="center">
 									<span class="label label-important">Banned</span>
 								</td>
@@ -862,12 +1038,13 @@
 										<i class="icon-trash icon-white"></i> 
 									</a>
 								</td>
+                                <td> 02/16/2013</td>
 							</tr>
 							<tr>
                             	<td>01/01/2013</td>
-								<td>Campaign23</td>
-								<td class="center">Test1234</td>
-								<td class="center">Test1234</td>
+								<td>Product23</td>
+								<td class="center">100</td>
+								<td class="center">1234567890</td>
 								<td class="center">
 									<span class="label">Inactive</span>
 								</td>
@@ -882,12 +1059,13 @@
 										<i class="icon-trash icon-white"></i> 
 									</a>
 								</td>
+                                <td> 10/09/2013</td>
 							</tr>
 							<tr>
                             	<td>01/01/2013</td>
-								<td>Campaign24</td>
-								<td class="center">Test1234</td>
-								<td class="center">Test1234</td>
+								<td>Product24</td>
+								<td class="center">43</td>
+								<td class="center">1234567890</td>
 								<td class="center">
 									<span class="label label-warning">Pending</span>
 								</td>
@@ -902,12 +1080,13 @@
 										<i class="icon-trash icon-white"></i> 
 									</a>
 								</td>
+                                <td> 01/05/2013</td>
 							</tr>
 							<tr>
                             	<td> 01/01/2013</td>
-								<td>Campaign25</td>
-								<td class="center">Test1234</td>
-								<td class="center">Test1234</td>
+								<td>Product25</td>
+								<td class="center">25</td>
+								<td class="center">1234567890</td>
 								<td class="center">
 									<span class="label label-warning">Pending</span>
 								</td>
@@ -922,12 +1101,13 @@
 										<i class="icon-trash icon-white"></i> 
 									</a>
 								</td>
+                                <td> 04/04/2013</td>
 							</tr>
 							<tr>
                             	<td> 01/01/2013</td>
-								<td>Campaign26</td>
-								<td class="center">Test1234</td>
-								<td class="center">Test1234</td>
+								<td>Product26</td>
+								<td class="center">11</td>
+								<td class="center">1234567890</td>
 								<td class="center">
 									<span class="label label-success">Active</span>
 								</td>
@@ -942,11 +1122,12 @@
 										<i class="icon-trash icon-white"></i> 
 									</a>
 								</td>
+                                <td> 04/02/2013</td>
 							<tr>
                             	<td> 01/27/2013</td>
-								<td>Campaign27</td>
-								<td class="center">Test1234</td>
-								<td class="center">Test1234</td>
+								<td>Product27</td>
+								<td class="center">14</td>
+								<td class="center">1234567890</td>
 								<td class="center">
 									<span class="label label-success">Active</span>
 								</td>
@@ -960,7 +1141,7 @@
 									<a class="btn btn-danger" href="#">
 										<i class="icon-trash icon-white"></i> 
 									</a>
-								</td>
+								</td><td> 01/01/2013</td>
 						  </tbody>
 					  </table> 
                           
@@ -1091,9 +1272,9 @@ function message_welcome1(){
 	function message_welcome3(){
 		var unique_id = $.gritter.add({
 			// (string | mandatory) the heading of the notification
-			title: 'Test1234!',
+			title: '1234567890!',
 			// (string | mandatory) the text inside the notification
-			text: 'Test1234.',
+			text: '1234567890.',
 			// (string | optional) the image to display on the left
 			image: 'img/avatar.jpg',
 			// (bool | optional) if you want it to fade out on its own or just sit there
