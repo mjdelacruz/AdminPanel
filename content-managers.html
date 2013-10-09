@@ -4,9 +4,9 @@
 	
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title> Statistics</title>
+	<title>Content Managers</title>
 	<meta name="description" content="Perfectum Dashboard Bootstrap Admin Template.">
-	<meta name="author" content="Å?ukasz Holeczek">
+	<meta name="author" content="ï¿½?ukasz Holeczek">
 	<!-- end: Meta -->
 	
 	<!-- start: Mobile Specific -->
@@ -210,7 +210,7 @@
 										<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>
 										<span class="header">
 											<span class="from">
-										    	Å?ukasz Holeczek
+										    	ï¿½?ukasz Holeczek
 										     </span>
 											<span class="time">
 										    	6 min
@@ -348,7 +348,8 @@
 						</li>
                         <li><a class="dropmenu" href="verticals.html"><i class="icon-tasks icon-white"></i><span class="hidden-tablet">Product Managers</span></a>
 							<ul>
-                            	<li><a class="submenu" href="allcampaigns.html"><span class="hidden-tablet">All Campaigns</span></a></li>
+                            	<li><a class="submenu" href="product-lists.html"><span class="hidden-tablet">Add Product</span></a></li>
+                           	  <li><a class="submenu" href="allcampaigns.html"><span class="hidden-tablet">All Campaigns</span></a></li>
                                 <li><a class="submenu" href="singlecampaign.html"><span class="hidden-tablet">Create Campaigns</span></a></li>
 								<li><a class="submenu" href="create-campaigns.html"><span class="hidden-tablet">A/B Split Campaigns</span></a></li>
                                 <li><a class="submenu" href="reports.html"><span class="hidden-tablet">Reports</span></a></li>
@@ -363,10 +364,10 @@
 							</ul>	
 						</li>
                         <li><a href="seo-manager.html"><i class="icon-dashboard icon-white"></i><span class="hidden-tablet">SEO</span></a></li>
-                       
+                       	
                        
 
-					</ul></div><!--/.well -->
+				  </ul></div><!--/.well -->
 			</div>
             <!--/span-->
 			<!-- end: Main Menu -->
@@ -491,6 +492,93 @@
 					</div>
 				</div>            
 	              
+                  
+              <div id="data_entry_pages" class="row-fluid">
+                        <div class="box span12">
+                            <div class="box-header" data-original-title>
+                                <h2><i class="icon-edit"></i><span class="break"></span>Add Page</h2>
+                                <div class="box-icon">
+                                    <a href="#" class="btn-setting"><i class="icon-wrench"></i></a>
+                                    <a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
+                                    <a href="#" class="btn-hide"><i class="icon-remove"></i></a>
+                                </div>
+                            </div>
+                            <div class="box-content">
+                                <form class="form-horizontal">
+                                    <fieldset>
+                                        <div class="control-group">
+                                            <label class="control-label" for="typeahead">Title </label>
+                                            <div class="controls">
+                                                <input type="text" class="span6 typeahead" id="txttitle"  data-provide="typeahead" data-items="4" 
+                                                    data-source='["Alabama","Alaska","Arizona","Arkansas"]'>
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="typeahead">Description </label>
+                                            <div class="controls">
+                                                <input type="text" class="span6 typeahead" id="typeahead"  data-provide="typeahead" data-items="4" 
+                                                    data-source='["Alabama","Alaska","Arizona","Arkansas"]'>
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="typeahead">URL </label>
+                                            <div class="controls">
+                                                <input type="text" class="span6 typeahead" id="typeahead"  data-provide="typeahead" data-items="4" 
+                                                    data-source='["Alabama","Alaska","Arizona","Arkansas"]'>
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="selectError">Meta</label>
+                                            <div class="controls">
+                                                <input type="text" placeholder="add new" class="span2 typeahead" id="typeahead"  data-provide="typeahead" data-items="4" >
+                                                <br /><br />
+                                                <select id="selectError" data-rel="chosen">
+                                                    <option>Select for existing Meta</option>
+                                                    <option>Compare</option>
+                                                    <option>Hero</option>
+                                                    <option>Lowest</option>
+                                                    <option>Credit</option>
+                                                    <option>Card</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="typeahead">Author </label>
+                                            <div class="controls">
+                                                <input type="text" class="span6 typeahead" id="typeahead"  data-provide="typeahead" data-items="4" 
+                                                    data-source='["Alabama","Alaska","Arizona","Arkansas"]'>
+                                            </div>
+                                        </div><div class="control-group">
+                                            <label class="control-label" for="selectError3">Status</label>
+                                            <div class="controls">
+                                                <select id="selectError3">
+                                                    <option>Option 1</option>
+                                                    <option>Option 2</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="control-group hidden-phone">
+                                            <label class="control-label" for="textarea2">Textarea WYSIWYG</label>
+                                            <div class="controls">
+                                                <textarea id="elm1" name="elm1" rows="25" cols="80" style="width: 100%">
+                                                    
+                                                </textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-actions">
+                                            <button type="submit" class="btn btn-primary">Save changes</button>
+                                            <button type="reset" class="btn">Cancel</button>
+                                        </div>
+                                    </fieldset>
+                                </form>   
+
+                            </div>
+                        </div><!--/span-->
+
+                    </div>    
+                  
+                  
+                  
               <div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header" data-original-title>
