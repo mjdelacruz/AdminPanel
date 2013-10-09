@@ -750,6 +750,7 @@
         <script src="js/jquery.sparkline.min.js"></script>
 
         <script src="js/custom.js"></script>
+        <script src="js/moneymax.js"></script>
         <script type="text/javascript">
 
             function message_welcome1(){
@@ -811,8 +812,15 @@
 
                 $(".datatable tbody tr").click(function(){
                     $('#data_entry_pages').show(500);    
+                    scroll_to("#data_entry_pages");
                     $("#txttitle").focus();
                 });                
+                
+                $(".datatable tbody tr, .datatable tbody tr td").hover(function(){
+                    $(this).addClass("row_hlight");
+                }, function(){
+                    $(this).removeClass("row_hlight");
+                })
                 
                 $(".btn-hide").click(function(){
                     $('#data_entry_pages').hide(500);

@@ -21,6 +21,27 @@
 	font-size:14px;
 }
 
+.row_hlight{
+    background-color: blue!important;
+}
 
+.animated {
+    -webkit-transition: height 0.2s;
+    -moz-transition: height 0.2s;
+    transition: height 0.2s;
+}
 
-/* data sorting */
+.ui-widget-header {
+    background: url("../img/dbg.jpg") repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+    color: #fff !important;
+    font-weight: normal !important;
+}
+.ui-dialog .ui-dialog-titlebar-close span {
+    margin: -7px -9px !important;
+}
+#dialog-message .ui-icon {
+    left: 42% !important;
+}
+#dlg_msg{
+    font-size: 12px;
+}

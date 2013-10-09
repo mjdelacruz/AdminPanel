@@ -1,4 +1,4 @@
-
+/*Common JS for all pages*/
 
 $(function(){
     var TH = $(".sortable .datatable thead th");
@@ -18,3 +18,9 @@ $(function(){
     
     $(".sortable .datatable thead th[default]").click();
 });
+
+function scroll_to(xelement){
+    $('html, body').animate({
+        scrollTop: $(xelement).offset().top
+    }, 1000);
+}
