@@ -21,21 +21,10 @@
         <link id="base-style-responsive" href="css/style-responsive.css" rel="stylesheet">
         <link href="css/custom.css" type="text/css" rel="stylesheet">
         <link href="css/product_options.css" type="text/css" rel="stylesheet">
+        <link rel="stylesheet" href="jq/themes/base/jquery.ui.all.css">
         <!--<link href="js/jquery-1.9.1.min.js" type="text/javascript">-->
         
-        <link rel="stylesheet" href="jq/themes/base/jquery.ui.all.css">
-        <script src="jq/jquery-1.9.1.js"></script>
-        <script src="jq/external/jquery.mousewheel.js"></script>
-        <script src="jq/ui/jquery.ui.core.js"></script>
-        <script src="jq/ui/jquery.ui.widget.js"></script>
-        <script src="jq/ui/jquery.ui.spinner.js"></script>
-        <script src="jq/ui/jquery.ui.mouse.js"></script>
-        <script src="jq/ui/jquery.ui.button.js"></script>
-        <script src="jq/ui/jquery.ui.draggable.js"></script>
-        <script src="jq/ui/jquery.ui.position.js"></script>
-        <script src="jq/ui/jquery.ui.resizable.js"></script>
-        <script src="jq/ui/jquery.ui.dialog.js"></script>
-
+        
         <!--[if lt IE 7 ]>
         <link id="ie-style" href="css/style-ie.css" rel="stylesheet">
         <![endif]-->
@@ -430,19 +419,19 @@
                                     <div class="div_grp" style="width: 300px;">
                                         <label class="control-label">Option</label>
                                         <div class="controls">
-                                            <input id="txt_opt" class="input-large" type="text">
+                                            <input maxlength="200" id="txt_opt" class="input-large" type="text">
                                         </div>
                                     </div>
                                     <div class="div_grp" style="width: 361px;">
                                         <label class="control-label" for="textarea2">Value</label>
                                         <div class="controls">
-                                            <textarea id="txt_value" rows="1" style="width: 270px;"></textarea>
+                                            <textarea class="animated" id="txt_value" style="width: 270px; height: 20px!important;"></textarea>
                                         </div>
                                     </div>
                                     <div class="div_grp" style="width: 186px;;">
                                         <label class="control-label">Expire</label>
                                         <div class="controls">
-                                            <input id="txt_expire" style="width: 40px;" type="text">
+                                            <input id="txt_expire" style="width: 40px; height: 18px" type="text">
                                         </div>
                                     </div>  
                                     <div class="div_grp" style="width: 123px; float: right; text-align: right;">
@@ -482,7 +471,7 @@
                                                 <td>a</td>
                                                 <td>a</td>
                                                 <td>a</td>
-                                                <td width="10%" class="center">
+                                                <td width="10%" style="text-align: right;">
                                                     <a class="btn btn-warning" href="#">
                                                         <i class="icon-edit icon-white"></i>  
                                                     </a>
@@ -580,6 +569,21 @@
         <script src="js/jquery.knob.js"></script>
 
         <script src="js/jquery.sparkline.min.js"></script>
+        
+        <!-- Added by Kelvin Sanchez -->
+        <!--<script src="jq/jquery-1.9.1.js"></script>-->
+        <script src="jq/external/jquery.mousewheel.js"></script>
+        <script src="jq/ui/jquery.ui.core.js"></script>
+        <script src="jq/ui/jquery.ui.widget.js"></script>
+        <script src="jq/ui/jquery.ui.spinner.js"></script>
+        <script src="jq/ui/jquery.ui.mouse.js"></script>
+        <script src="jq/ui/jquery.ui.button.js"></script>
+        <script src="jq/ui/jquery.ui.draggable.js"></script>
+        <script src="jq/ui/jquery.ui.position.js"></script>
+        <script src="jq/ui/jquery.ui.resizable.js"></script>
+        <script src="jq/ui/jquery.ui.dialog.js"></script>
+        <script src="js/jquery.autosize.min.js"></script>
+
 
         <script src="js/custom.js"></script>
         <script type="text/javascript">
@@ -660,11 +664,12 @@
         });	
         
         $( "#txt_expire" ).spinner();
+        $('textarea').autosize();
         
         $("#btn_save").click(function(){
             if(verify_opt_entry() == false) { return false; }
             
-            $('#prod_opt_list tbody:first').append('<tr><td>'+jQuery.trim($("#txt_opt").val())+'</td><td>'+jQuery.trim($("#txt_value").val())+'</td><td>'+jQuery.trim($("#txt_expire").val())+'</td><td width="10%" class="center"><a class="btn btn-warning" href="#"><i class="icon-edit icon-white"></i></a> <a class="btn btn-danger" href="#"><i class="icon-trash icon-white"></i></a></td></tr>');
+            $('#prod_opt_list tbody:first').append('<tr><td>'+jQuery.trim($("#txt_opt").val())+'</td><td>'+jQuery.trim($("#txt_value").val())+'</td><td>'+jQuery.trim($("#txt_expire").val())+'</td><td width="10%" style="text-align: right"><a class="btn btn-warning" href="#"><i class="icon-edit icon-white"></i></a> <a class="btn btn-danger" href="#"><i class="icon-trash icon-white"></i></a></td></tr>');
             
             ksdialog("Data has been successfully saved.");
             reset_form();
